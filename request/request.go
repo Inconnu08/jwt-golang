@@ -39,7 +39,6 @@ func ParseFromRequest(req *http.Request, extractor Extractor, keyFunc jwt.Keyfun
 }
 
 // ParseFromRequest but with custom Claims type
-// DEPRECATED: use ParseFromRequest and the WithClaims option
 func ParseFromRequestWithClaims(req *http.Request, extractor Extractor, claims jwt.Claims, keyFunc jwt.Keyfunc) (token *jwt.Token, err error) {
 	return ParseFromRequest(req, extractor, keyFunc, WithClaims(claims))
 }
